@@ -1,12 +1,12 @@
 // NOTE - You must have a level with the name "start".  This is used as the first level in the game.
 
 var game = {
-    music: "98_Lost_Mine.mp3",
+    music: "",
     background_image: "intro-bg.jpg",
     levels: {
 
         start: {
-            message: "You come across a dark cave",
+            message: "You come across a dark cave, there are three path in front of you",
             choices: [
                 {
                     text: "Turn Left",
@@ -14,21 +14,43 @@ var game = {
                 },
 
                 {
-                    text: "Turn Right",
+                    text:"Go Forward",
                     nextLevel: "cave",
                 },
                 
                 {
-                    text: "Go Forward",
+                    text: "Turn Right",
                     nextLevel: "sea"
                 }
             ]
         },
 
-        cave: {
+        lava: {
+            background_image: "lava.gif",
+            music: "",
+            message: "Ouch, you had come across to a lava shore, the heat here is UNDURABLE. What should you do",
+            choices: [
+                {
+                    text: "Walk Back",
+                    nextLevel: "start",
+                },
+                
+                {
+                    text: "Jump Down",
+                    nextLevel: "fire",
+                },
+                
+                {
+                    text: "Wait",
+                    nextLevel: "end",
+                },
+            ]
+        },
+        
+        fire: {
             background_image: "fire.gif",
-            music: "Final-Fantasy-7-Boss-Battle.mp3",
-            message: "You come across a fire monster or something!",
+            music: "",
+            message: "",
             choices: [
                 {
                     text: "Start over",
@@ -37,12 +59,13 @@ var game = {
             ]
         },
 
-        field: {
-            message: "Some adventurer you are...",
+        end: {
+            background_image: "end.gif",
+            message: "Do something is better than nothing, You lose",
             choices: [
                 {
-                    text: "Start over",
-                    nextLevel: "field2",
+                    text: "Retry",
+                    nextLevel: "start",
                 },
             ]
         },
