@@ -9,14 +9,19 @@ var game = {
             message: "You come across a dark cave",
             choices: [
                 {
-                    text: "Enter the cave",
-                    nextLevel: "cave",
+                    text: "Turn Left",
+                    nextLevel: "lava",
                 },
 
                 {
-                    text: "Keep on moving",
-                    nextLevel: "field",
+                    text: "Turn Right",
+                    nextLevel: "cave",
                 },
+                
+                {
+                    text: "Go Forward",
+                    nextLevel: "sea"
+                }
             ]
         },
 
@@ -34,6 +39,16 @@ var game = {
 
         field: {
             message: "Some adventurer you are...",
+            choices: [
+                {
+                    text: "Start over",
+                    nextLevel: "field2",
+                },
+            ]
+        },
+        
+        field2: {
+            message: "Test...",
             choices: [
                 {
                     text: "Start over",
