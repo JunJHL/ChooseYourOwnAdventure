@@ -20,11 +20,11 @@ var game = {
                 
                 {
                     text: "Turn Right",
-                    nextLevel: "sea"
-                }
+                    nextLevel: "sea",
+                },
             ]
         },
-
+//set 1
         lava: {
             background_image: "lava.gif",
             music: "",
@@ -50,10 +50,10 @@ var game = {
         fire: {
             background_image: "fire.gif",
             music: "",
-            message: "",
+            message: "Hope Come From Risk, To Be Continue...",
             choices: [
                 {
-                    text: "Start over",
+                    text: "GG",
                     nextLevel: "start",
                 },
             ]
@@ -69,16 +69,47 @@ var game = {
                 },
             ]
         },
-        
-        field2: {
-            message: "Test...",
+//set 2        
+        cave: {
+            message: "You go deeper into the cava, limited oxygen and dark",
             choices: [
                 {
-                    text: "Start over",
+                    text: "Go Deeper",
+                    nextLevel: "forest",
+                },
+                
+                {
+                    text: "Go Out",
                     nextLevel: "start",
                 },
+                
+                {
+                    text: "Wait And See",
+                    nextLevel: "glazier",
+                }
             ]
         },
-
+//set 3      
+        forest: {
+            message: "A light lit your eyes, You come to a forst",
+            choices: [
+                {
+                    text: "Walk Around",
+                    nextLevel: "boss_forest",
+                },
+                
+                {
+                    text: "Seek for food",
+                    nextLevel: "boss_forest",
+                },
+                
+                {
+                    text: "Run Back",
+                    nextLevel: "cave",
+                }
+                ]
+        }
+        
+        
     }
 };
