@@ -1,8 +1,7 @@
 // NOTE - You must have a level with the name "start".  This is used as the first level in the game.
 
 var game = {
-    music: "",
-    background_image: "intro-bg.jpg",
+    background_image: "intros.jpg",
     levels: {
 
         start: {
@@ -27,7 +26,6 @@ var game = {
 //set 1
         lava: {
             background_image: "lava.gif",
-            music: "",
             message: "Ouch, you had come across to a lava shore, the heat here is UNDURABLE. What should you do",
             choices: [
                 {
@@ -49,14 +47,7 @@ var game = {
         
         fire: {
             background_image: "fire.gif",
-            music: "",
             message: "Hope Come From Risk, To Be Continue...",
-            choices: [
-                {
-                    text: "GG",
-                    nextLevel: "start",
-                },
-            ]
         },
 
         end: {
@@ -69,9 +60,10 @@ var game = {
                 },
             ]
         },
-//set 2        
+//set 2      
         cave: {
-            message: "You go deeper into the cava, limited oxygen and dark",
+            message: "You come to the deep part of the cave, Limited oxygen and dark",
+            background_image: "cave.jpg",
             choices: [
                 {
                     text: "Go Deeper",
@@ -79,28 +71,29 @@ var game = {
                 },
                 
                 {
-                    text: "Go Out",
-                    nextLevel: "start",
+                    text: "Wait And See",
+                    nextLevel: "glacier",
                 },
                 
                 {
-                    text: "Wait And See",
-                    nextLevel: "glazier",
+                    text: "Go Out",
+                    nextLevel: "start",
                 }
             ]
         },
-//set 3      
+//set 3-1     
         forest: {
-            message: "A light lit your eyes, You come to a forst",
+            message: "A light lit your eyes, You come to a forest",
+            background_image: "forest.gif",
             choices: [
                 {
                     text: "Walk Around",
-                    nextLevel: "boss_forest",
+                    nextLevel: "bossForest",
                 },
                 
                 {
                     text: "Seek for food",
-                    nextLevel: "boss_forest",
+                    nextLevel: "bossForest",
                 },
                 
                 {
@@ -108,8 +101,103 @@ var game = {
                     nextLevel: "cave",
                 }
                 ]
+        },
+        
+        bossForest: {
+            message: "You have walk to a lake, and you you saw a dragon like creature standing in the center",
+            background_image: "dragon.jpg",
+            choices: [
+                {
+                    text:"Fight",
+                    nextLevel: "gg1",
+                },
+                
+                {
+                    text: "Run Away",
+                    nextLevel: "gg2",
+                },
+                
+                {
+                    text: "Throw a Bone",
+                    nextLevel: "master",
+                }
+                
+                ]
+        },
+        
+        gg1: {
+            message: "How dare are you to fight the mighty forest lord.\nYou fly away before you can reach it.",
+            background_image: "blow.jpg", 
+            choices: [ 
+                {
+                    text:"Retry",
+                    nextLevel: "start"
+                } 
+                ]
+        },
+        
+        gg2: {
+            message: "The dragon saw you, and blown you up with its breath.",
+            background_image: "blow.jpg",
+            choices: [
+                {
+                    text: "Retry",
+                    nextLevel: "start",
+                }
+                ]
+        },
+        
+        master: {
+            message: "The dragon fly to the bone. It is now yours. To Be Continue",
+            background_image: "master.jpg"
+        },
+
+//set 3-2        
+        glacier: {
+            message: "You had come to the top of the glacier. The cold make you fall.",
+            background_image: "glacier.jpg",
+            choices: [{
+                text: "next",
+                nextLevel: "town"
+            } 
+            ]
+        },
+        
+        town: {
+            message: "You wake up finding yourself on a bed. You were rescue by the villager. To Be Continue.",
+            background_image: "town.jpg",
+        },
+        
+//set 3
+        sea: {
+            message: "You found yourself on a island in the middle of the ocean",
+            background_image: "ocean.jpg",
+            choices: [
+                {
+                    text: "Fish",
+                    nextLevel: "whale",
+                },
+                
+                {
+                    text: "Jump Down",
+                    nextLevel: "ocean",
+                },
+                
+                {
+                    text: "Run Back",
+                    nextLevel: "cave",
+                }
+                ]
+        },
+        
+        whale: {
+            message: "A whale jump up and.... To Be Continue",
+            background_image: "whale.jpg",
+        },
+        
+        ocean: {
+            message: "No zuo No die why you try, To Be Continue",
+            background_image: "sea.gif",
         }
-        
-        
     }
 };
